@@ -1,3 +1,27 @@
+*** 
+**To successfully run on ubuntu20.04 with pcl-10.0, do some changes:**
++ add libg2o
+
+~sudo apt-get install ros-noetic-geodesy ros-noetic-pcl-ros ros-noetic-nmea-msgs~
+
+sudo apt-get install ros-noetic-geodesy ros-noetic-pcl-ros ros-noetic-nmea-msgs ros-noetic-libg2o
+
++ revise CMakeLists.txt in **odometry_saver**:
+
+~add_definitions(-std=c++11 -msse -msse2 -msse3 -msse4 -msse4.1 -msse4.2)~
+
+~set(CMAKE_CXX_FLAGS "-std=c++11 -msse -msse2 -msse3 -msse4 -msse4.1 -msse4.2")~
+
+add_definitions(-std=c++14 -msse -msse2 -msse3 -msse4 -msse4.1 -msse4.2)
+
+set(CMAKE_CXX_FLAGS "-std=c++14 -msse -msse2 -msse3 -msse4 -msse4.1 -msse4.2")
+
+~find_package(PCL 1.7 REQUIRED)~
+
+find_package(PCL 1.10 REQUIRED)
+
+*** 
+
 # interactive_slam
 ***interactive_slam*** is an open source 3D LIDAR-based mapping framework. In contrast to existing automatic SLAM packages, we aim to develop a semi-automatic framework which allows the user to interactively and intuitively correct mapping failures (e.g., corrupted odometry, wrong loop detection, distorted map, etc) with minimal human effort. This framework provides several map correction features:
   - [Manual & Automatic] Loop closing
