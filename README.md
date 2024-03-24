@@ -32,7 +32,7 @@ This package has been tested on Ubuntu 18.04 & ROS melodic or later.
 # for ROS noetic
 sudo apt-get install libglm-dev libglfw3-dev
 sudo apt-get install libsuitesparse-dev libeigen3-dev
-sudo apt-get install ros-noetic-geodesy ros-noetic-pcl-ros ros-noetic-nmea-msgs 
+sudo apt-get install ros-noetic-geodesy ros-noetic-pcl-ros ros-noetic-nmea-msgs ros-noetic-libg2o
 ```
 
 ```bash
